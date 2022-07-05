@@ -2,24 +2,25 @@
 import { HttpPostClientSpy } from '../../test/mock-http-post-client'
 import { RemoteAuthentication } from './remote-authentication'
 
-type SutTypes={
+type SutTypes = {
   sut: RemoteAuthentication
-  httpClientSpy: HttpPostClientSpy
+  httpPostClientSpy: HttpPostClientSpy
 }
 
 const makeSut = (url: string = 'any_url'): SutTypes => {
-  const httpClientSpy = new HttpPostClientSpy()
-  const sut = new RemoteAuthentication(url, httpClientSpy)
-  return { sut, httpClientSpy }
+  const httpPostClientSpy = new HttpPostClientSpy()
+  // SUT - System under test
+  const sut = new RemoteAuthentication(url, httpPostClientSpy)
+  return { sut, httpPostClientSpy }
 }
 
 describe('RemoteAuthentication', () => {
   test('Should call HttpClient with correct URL', async () => {
     const url = 'any_url'
-    const { sut, httpClientSpy } = makeSut()
+    const { sut, httpPostClientSpy } = makeSut()
     await sut.auth()
     // Testar se a implementação da abstração da requisição de post, que será injetada dentro de RemoteAuthentication
     // está recebendo a utl que é passada como atributo para o construtor da classe RemoteAuthentication
-    expect(httpClientSpy.url).toBe(url)
+    expect(httpPostClientSpy.url).toBe(url)
   })
 })
