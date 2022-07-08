@@ -1,5 +1,5 @@
 import { faker } from '@faker-js/faker'
-import { AutehnticationParams } from '../../../domain/usecases/authentication'
+import { AutehnticationParams } from '@/domain/usecases/authentication'
 
 type httpPostParams = {
   url: string

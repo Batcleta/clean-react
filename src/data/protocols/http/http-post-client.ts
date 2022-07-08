@@ -1,4 +1,4 @@
-import { AutehnticationParams } from '../../../domain/usecases/authentication'
+import { AutehnticationParams } from '@/domain/usecases/authentication'
 
 export type HttpPostParams = {
   url: string

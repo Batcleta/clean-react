@@ -1,7 +1,7 @@
 // Todos os casos de Remote irão fazer requisições http
-import { mockAuthentification } from '../../../domain/test/mock-authentification'
-import { HttpPostClientSpy } from '../../test/mock-http-post-client'
-import { RemoteAuthentication } from './remote-authentication'
+import { mockAuthentification } from '@/domain/test/mock-authentification'
+import { HttpPostClientSpy } from '@/data/test/mock-http-post-client'
+import { RemoteAuthentication } from '@/data/usecases/authentication/remote-authentication'
 
 type SutTypes = {
   sut: RemoteAuthentication
