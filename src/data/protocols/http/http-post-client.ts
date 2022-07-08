@@ -1,4 +1,5 @@
 import { AutehnticationParams } from '@/domain/usecases/authentication'
+import { HttpResponse } from './http-response'
 
 export type HttpPostParams = {
   url: string
@@ -6,5 +7,6 @@ export type HttpPostParams = {
 }
 
 export interface IHttpPostClient{
-  post(params: HttpPostParams): Promise<void>
+  post(params: HttpPostParams): Promise<HttpResponse
+  >
 }
